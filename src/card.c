@@ -1,20 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+
 #include "card.h"
 
-// PRIVATE FUNCTIONS PROTOTYPES
-static void prvFunction1();
-static void prvFunction1();
-static void prvFunction1();
-static void prvFunction1();
-static void prvFunction1();
-
-// PUBLIC FUNCTIONS DEFINITIONS
-void PrintCards(card_t * cardArray, uint8_t size)
+card_t CreateRandomCard()
 {
-    prvFunction1();
-}
+	srand(time(NULL));
 
-// PRIVATE FUNCTIONS DEFINITIONS
-static void prvFunction1();
+	card_t c;
+	c.value = rand() % MAX_CARD_VALUE + 1;
+	c.suit = rand() % NUM_SUITS;
+
+	return c;
+}

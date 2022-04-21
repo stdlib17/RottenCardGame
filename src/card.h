@@ -6,10 +6,20 @@
  * DEFINES                  *
  ****************************/
 
-#define VALUE_ACE 14
+//Temporal defines
+#define CURRENT_HANDS 2
+#define CURRENT_CARDS_PER_HAND 4
+//
+
+#define MAX_HANDS 6
+#define MAX_CARDS_PER_HAND 8
+
+#define VALUE_ACE 1
 #define VALUE_KING 13
 #define VALUE_QUEEN 12
 #define VALUE_JACK 11
+
+#define MAX_CARD_VALUE 13
 
 typedef enum {
   CLUBS,
@@ -24,8 +34,5 @@ typedef struct {
   eSuit suit;
 } card_t;
 
-/****************************
- * PUBLIC FUNCTIONS PROTOTYPES        
- ****************************/
-
-void PrintCards(card_t * cardArray, uint8_t size);
+//Public functions
+card_t CreateRandomCard();
