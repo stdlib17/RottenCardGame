@@ -23,3 +23,9 @@ typedef struct {
   uint8_t value;
   eSuit suit;
 } card_t;
+
+/****************************
+ * PUBLIC FUNCTIONS PROTOTYPES        
+ ****************************/
+
+void PrintCards(card_t * cardArray, uint8_t size);

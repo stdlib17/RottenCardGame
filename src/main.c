@@ -2,11 +2,10 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#include "cardPrinting.h"
+#include "card.h"
 
 int main() {
-
-
+	printf("Hello world\n\n");
 
 	return 0;
 }
