@@ -7,10 +7,9 @@
 
 #include "card.h"
 
-//____________________
-//
-// PRINTING MODULE
-//____________________
+/************************************
+ * DEFINES                  
+ ************************************/
 
 typedef struct {
 	card_t cards[CURRENT_HANDS][CURRENT_CARDS_PER_HAND];
@@ -19,10 +18,16 @@ typedef struct {
 }printing;
 printing printer;
 
+/************************************
+ * PUBLIC FUNCTION PROTOTYPES                  
+ ************************************/
+
 //Update cards to print
 void PrintCards(card_t cardArray[CURRENT_HANDS][CURRENT_CARDS_PER_HAND], int size, int hands);
 
-// PRIVATE FUNCTIONS PROTOTYPES
+/************************************
+ * PRIVATE FUNCTION PROTOTYPES                  
+ ************************************/
 static void Print();
 
 
