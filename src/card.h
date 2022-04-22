@@ -1,6 +1,11 @@
+#ifndef _CARD_H_
+#define _CARD_H_
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+
+
 
 /****************************
  * DEFINES                  *
@@ -21,7 +26,7 @@
 
 #define MAX_CARD_VALUE 13
 
-typedef enum {
+typedef enum{
   CLUBS,
   DIAMONDS,
   SPADES,
@@ -29,10 +34,13 @@ typedef enum {
   NUM_SUITS,
 } eSuit;
 
-typedef struct {
-  uint8_t value;
+typedef struct{
+  int value;
   eSuit suit;
 } card_t;
 
 //Public functions
 card_t CreateRandomCard();
+
+
+#endif _CARD_H_

@@ -6,7 +6,8 @@
 #include "cardPrinting.h"
 
 int main() {
-	
+	srand(time(NULL));
+
 	card_t cardArray[CURRENT_HANDS][CURRENT_CARDS_PER_HAND];
 	for (int i = 0; i < CURRENT_HANDS; ++i) {
 		for (int j = 0; j < CURRENT_CARDS_PER_HAND; ++j) {
@@ -16,5 +17,6 @@ int main() {
 	
 	PrintCards(cardArray, CURRENT_CARDS_PER_HAND, CURRENT_HANDS);
 
+	system("pause");
 	return 0;
 }

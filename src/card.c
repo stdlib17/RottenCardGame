@@ -6,8 +6,6 @@
 
 card_t CreateRandomCard()
 {
-	srand(time(NULL));
-
 	card_t c;
 	c.value = rand() % MAX_CARD_VALUE + 1;
 	c.suit = rand() % NUM_SUITS;
