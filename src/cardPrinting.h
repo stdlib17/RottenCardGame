@@ -11,24 +11,17 @@
  * DEFINES                  
  ************************************/
 
-typedef struct {
-	card_t cards[CURRENT_HANDS][CURRENT_CARDS_PER_HAND];
-	int cardNum;
-	int hands;
-}printing;
-printing printer;
+
 
 /************************************
  * PUBLIC FUNCTION PROTOTYPES                  
  ************************************/
-
-//Update cards to print
-void PrintCards(card_t cardArray[CURRENT_HANDS][CURRENT_CARDS_PER_HAND], int size, int hands);
+void PrintAllHands(hand_t* hands, uint8_t size);
+void PrintHand(hand_t* hand);
 
 /************************************
  * PRIVATE FUNCTION PROTOTYPES                  
  ************************************/
-static void Print();
 
 
 #endif _CARDPRINTING_H_

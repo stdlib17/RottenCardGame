@@ -10,8 +10,8 @@
  ************************************/
 
 // Temporal defines
-#define CURRENT_HANDS 2
-#define CURRENT_CARDS_PER_HAND 4
+#define CURRENT_HANDS 10
+#define CURRENT_CARDS_PER_HAND 5
 //
 #define MAX_CARDS_IN_DECK 52
 #define MAX_HANDS 6
@@ -36,14 +36,14 @@ typedef struct{
 } card_t;
 
 typedef struct{
-  card_t * cards;
+  card_t ** cards;
   uint8_t n_cards; 
 } hand_t;
 
 /************************************
  * PUBLIC FUNCTION PROTOTYPES                  
  ************************************/
-hand_t Card_CreateDeck()
+hand_t* Card_CreateDeck();
 card_t Card_CreateRandomCard();
 
 

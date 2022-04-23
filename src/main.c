@@ -1,22 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <time.h>
 
 #include "card.h"
 #include "cardPrinting.h"
 
 int main(void) {
 	srand(time(NULL));
-
-/* TODO: Refactor this, we have to define better the types and structs of our data structures
-	card_t cardArray[CURRENT_HANDS][CURRENT_CARDS_PER_HAND];
-	for (int i = 0; i < CURRENT_HANDS; ++i) {
-		for (int j = 0; j < CURRENT_CARDS_PER_HAND; ++j) {
-			cardArray[i][j] = CreateRandomCard();
-		}
-	}
-*/	
-	PrintCards(cardArray, CURRENT_CARDS_PER_HAND, CURRENT_HANDS);
+	
+	hand_t * deck = Card_CreateDeck();
+	PrintHand(deck);
 
 	system("pause");
 	return 0;
