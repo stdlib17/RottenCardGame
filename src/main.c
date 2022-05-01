@@ -9,7 +9,11 @@
 int main(void) {
 	srand(time(NULL));
 	
-	hand_t * deck = Card_CreateDeck();
+	deck_t excludedCards;
+	excludedCards.cards = NULL;
+	excludedCards.n_cards = 0;
+
+	deck_t * deck = Deck_CreateDeckExclude(&excludedCards);
 	PrintHand(deck);
 
 	system("pause");

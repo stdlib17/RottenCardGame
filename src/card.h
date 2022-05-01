@@ -1,8 +1,6 @@
-#ifndef _CARD_H_
-#define _CARD_H_
+#ifndef CARD_H
+#define CARD_H
 
-#include <stdlib.h>
-#include <stdio.h>
 #include <stdint.h>
 
 /************************************
@@ -35,16 +33,10 @@ typedef struct{
   eSuit suit;
 } card_t;
 
-typedef struct{
-  card_t ** cards;
-  uint8_t n_cards; 
-} hand_t;
-
 /************************************
- * PUBLIC FUNCTION PROTOTYPES                  
+ * PUBLIC FUNCTION PROTOTYPES
  ************************************/
-hand_t* Card_CreateDeck();
-card_t Card_CreateRandomCard();
+card_t Card_CreateRandomCard(void);
+card_t Card_CreateCardFromNum(uint8_t n);
 
-
-#endif _CARD_H_
+#endif /* CARD_H */

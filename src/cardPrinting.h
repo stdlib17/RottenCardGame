@@ -1,27 +1,24 @@
-#ifndef _CARDPRINTING_H_
-#define _CARDPRINTING_H_
+#ifndef CARDPRINTING_H
+#define CARDPRINTING_H
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
-
-#include "card.h"
+#include "deck.h"
 
 /************************************
  * DEFINES                  
  ************************************/
 
-
-
 /************************************
  * PUBLIC FUNCTION PROTOTYPES                  
  ************************************/
-void PrintAllHands(hand_t* hands, uint8_t size);
-void PrintHand(hand_t* hand);
+void PrintAllHands(deck_t* hands, uint8_t size);
+void PrintHand(deck_t* hand);
 
 /************************************
  * PRIVATE FUNCTION PROTOTYPES                  
  ************************************/
 
 
-#endif _CARDPRINTING_H_
+#endif /* CARDPRINTING_H */

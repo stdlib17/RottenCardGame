@@ -4,19 +4,19 @@
 
 #include "cardPrinting.h"
 
-void PrintAllHands(hand_t* hands, uint8_t size)
+void PrintAllHands(deck_t* hands, uint8_t size)
 {
 	for (int i = 0; i < size; i++) {
 		PrintHand(&hands[i]);
 	}
 }
 
-void PrintHand(hand_t* hand)
+void PrintHand(deck_t* hand)
 {
 	for (int i = 0; i < hand->n_cards; i++)
 	{
 		printf("Suit: %d Value: %d \t", hand->cards[i]->suit, hand->cards[i]->value);
 	}
 	printf("\n");
-}
 
+}
