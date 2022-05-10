@@ -13,12 +13,14 @@
 /************************************
  * PUBLIC FUNCTION PROTOTYPES                  
  ************************************/
-void PrintAllHands(deck_t* hands, uint8_t size);
-void PrintHand(deck_t* hand);
+void CardPrinting_PrintAllHands(deck_t* hands, uint8_t size);
+void CardPrinting_PrintHand(deck_t* hand);
+void CardPrinting_PrintCard(card_t* card);
 
 /************************************
  * PRIVATE FUNCTION PROTOTYPES                  
  ************************************/
-
+char prvSuitToLetter(eSuit s);
+char prvValueToLetter(uint8_t v);
 
 #endif /* CARDPRINTING_H */

@@ -14,7 +14,7 @@ int main(void) {
 	excludedCards.n_cards = 0;
 
 	deck_t * deck = Deck_CreateDeckExclude(&excludedCards);
-	PrintHand(deck);
+	CardPrinting_PrintHand(deck);
 
 	system("pause");
 	return 0;
