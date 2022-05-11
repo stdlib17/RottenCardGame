@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <assert.h>
+
 #include "card.h"
 
 /************************************
@@ -19,6 +21,8 @@ card_t Card_CreateRandomCard(void)
  */
 card_t Card_CreateCardFromNum(uint8_t n)
 {
+	assert(0 <= n || n <= MAX_CARDS_IN_DECK);
+	
 	card_t c;
 	c.suit = n / 13;
 	c.value = n % 13 + 2;

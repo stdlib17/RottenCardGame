@@ -28,7 +28,7 @@ void CardPrinting_PrintHand(deck_t* hand)
 
 void CardPrinting_PrintCard(card_t* card)
 {
-	printf("%c%c ", prvSuitToLetter(card->suit), prvValueToLetter(card->value));
+	printf("%c%c ", prvValueToLetter(card->value), prvSuitToLetter(card->suit));
 }
 
 /************************************
@@ -37,7 +37,7 @@ void CardPrinting_PrintCard(card_t* card)
 
 char prvSuitToLetter(eSuit s)
 {
-	assert(s > HEARTS || s < CLUBS);
+	assert(CLUBS <= s || s <= HEARTS);
 		
 	char retVal;
 	switch(s)
@@ -66,7 +66,7 @@ char prvSuitToLetter(eSuit s)
 
 char prvValueToLetter(uint8_t v)
 {
-	assert(v > VALUE_ACE || v < 2);
+	assert(2 <= v || v <= VALUE_ACE);
 
 	char retVal;
 	switch (v)
@@ -87,6 +87,9 @@ char prvValueToLetter(uint8_t v)
 			retVal = 'J';
 			break;
 
+		case 10:
+			retVal = '0';
+			
 		default:
 			retVal = '0' + v;
 	}
