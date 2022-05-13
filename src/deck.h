@@ -7,8 +7,10 @@
 #include "card.h"
 
 /************************************
- * DEFINES                  
+ * DEFINES AND TYPES                  
  ************************************/
+#define DECK_SHUFFLE_TIMES 10000
+
 typedef struct{
   card_t ** cards;
   uint8_t n_cards; 
@@ -17,7 +19,9 @@ typedef struct{
 /************************************
  * PUBLIC FUNCTION PROTOTYPES                  
  ************************************/
-deck_t * Deck_CreateDeckExclude(deck_t * excludedCards);
+deck_t * Deck_CreateGameDeck(uint8_t players);
+deck_t * Deck_CreateDeckExclude(deck_t * excluded);
 void Deck_AddCardTo(deck_t * deck, card_t c);
+void Deck_Shuffle(deck_t * deck);
 
 #endif /* DECK_H */

@@ -6,6 +6,12 @@
 #include "cardPrinting.h"
 
 /************************************
+ * PRIVATE FUNCTION DEFINITIONS                  
+ ************************************/
+char prvSuitToLetter(eSuit s);
+char prvValueToLetter(uint8_t v);
+
+/************************************
  * PUBLIC FUNCTION DEFINITIONS                  
  ************************************/
 
@@ -26,7 +32,7 @@ void CardPrinting_PrintHand(deck_t* hand)
 
 }
 
-void CardPrinting_PrintCard(card_t* card)
+void inline CardPrinting_PrintCard(card_t* card)
 {
 	printf("%c%c ", prvValueToLetter(card->value), prvSuitToLetter(card->suit));
 }
@@ -37,7 +43,7 @@ void CardPrinting_PrintCard(card_t* card)
 
 char prvSuitToLetter(eSuit s)
 {
-	assert(CLUBS <= s || s <= HEARTS);
+	assert(CLUBS <= s && s <= HEARTS);
 		
 	char retVal;
 	switch(s)
@@ -66,7 +72,7 @@ char prvSuitToLetter(eSuit s)
 
 char prvValueToLetter(uint8_t v)
 {
-	assert(2 <= v || v <= VALUE_ACE);
+	assert(2 <= v && v <= VALUE_ACE);
 
 	char retVal;
 	switch (v)
@@ -89,6 +95,7 @@ char prvValueToLetter(uint8_t v)
 
 		case 10:
 			retVal = '0';
+			break;
 			
 		default:
 			retVal = '0' + v;

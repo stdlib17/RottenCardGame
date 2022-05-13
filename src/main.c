@@ -15,6 +15,10 @@ int main(void) {
 
 	deck_t * deck = Deck_CreateDeckExclude(&excludedCards);
 	CardPrinting_PrintHand(deck);
+	Deck_Shuffle(deck);
+	printf("\n\n");
+	CardPrinting_PrintHand(deck);
+
 
 	system("pause");
 	return 0;
