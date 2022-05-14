@@ -1,4 +1,6 @@
 **/build
+**/Debug
+**/.settings
 **/.vscode
 /.metadata/
 CMakeLists.txt
