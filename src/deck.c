@@ -65,7 +65,4 @@ void Deck_Shuffle(deck_t * deck)
 			deck->cards[randNum] = temp;
 		}
 	}
-	
-
-	
 }

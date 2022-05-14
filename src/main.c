@@ -10,6 +10,7 @@ int main(void) {
 	srand(time(NULL));
 
 	deck_t * deck = Deck_CreateGameDeck(4);
+
 	CardPrinting_PrintHand(deck);
 	Deck_Shuffle(deck);
 	printf("\n\n");
