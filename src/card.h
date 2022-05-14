@@ -3,9 +3,9 @@
 
 #include <stdint.h>
 
-/************************************
+/******************************************************
  * DEFINES                  
- ************************************/
+ ******************************************************/
 
 // Temporal defines
 #define CURRENT_HANDS 10
@@ -33,10 +33,12 @@ typedef struct{
   eSuit suit;
 } card_t;
 
-/************************************
+/******************************************************
  * PUBLIC FUNCTION PROTOTYPES
- ************************************/
+ ******************************************************/
 card_t Card_CreateRandomCard(void);
 card_t Card_CreateCardFromNum(uint8_t n);
+
+void Card_PrintCard(card_t* card);
 
 #endif /* CARD_H */

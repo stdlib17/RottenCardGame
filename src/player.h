@@ -6,26 +6,23 @@
 #include <stdint.h>
 #include "deck.h"
 
-/************************************
+/******************************************************
  * DEFINES AND TYPES                  
- ************************************/
+ ******************************************************/
 #define MAX_PLAYERS 8
- 
+#define MIN_PLAYERS 3
+
 typedef struct{
   deck_t hand;
-  uint8_t pts;
-  uint8_t rottenCnt;
+  uint8_t bid;
 
+  uint8_t pts;
+  uint8_t roundsWon;
 } player_t;
 
-/************************************
- * PUBLIC VARIABLES
- ************************************/
-player_t Players[MAX_PLAYERS];
-
-/************************************
+/******************************************************
  * PUBLIC FUNCTION PROTOTYPES                  
- ************************************/
+ ******************************************************/
 
 
 #endif /* PLAYER_H */

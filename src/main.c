@@ -3,18 +3,17 @@
 #include <stdint.h>
 #include <time.h>
 
-#include "card.h"
-#include "cardPrinting.h"
+#include "deck.h"
 
 int main(void) {
 	srand(time(NULL));
 
-	deck_t * deck = Deck_CreateGameDeck(4);
+	deck_t * deck = Deck_CreateGameDeck();
 
-	CardPrinting_PrintHand(deck);
+	Deck_PrintHand(deck);
 	Deck_Shuffle(deck);
 	printf("\n\n");
-	CardPrinting_PrintHand(deck);
+	Deck_PrintHand(deck);
 
 
 	system("pause");

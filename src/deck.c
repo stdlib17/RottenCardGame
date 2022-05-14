@@ -1,44 +1,21 @@
 #include "deck.h"
+#include "player.h"
 #include <assert.h>
 
-/************************************
+/******************************************************
  * PUBLIC FUNCTION DEFINITIONS
- ************************************/
+ ******************************************************/
 
-deck_t * Deck_CreateGameDeck(uint8_t players)
+deck_t * Deck_CreateGameDeck(void)
 {
-	//TODO: Create a size variable deck depending on how many players are playing. 
-	//See for example this rules: https://cardgames.io/ohhell/#rule
-
-	assert(2 < players && players < 8);
-
-	deck_t * excludedCards = malloc(sizeof(*excludedCards));
-	excludedCards->cards = NULL;
-	excludedCards->n_cards = 0;
-
-	return Deck_CreateDeckExclude(excludedCards);
-}
-
-/**
- * @brief Creates a new deck excluding the cards from excludedCards deck
- */
-deck_t * Deck_CreateDeckExclude(deck_t *excluded)
-{
-	deck_t *deck = malloc(sizeof(*deck));
+	deck_t * deck = malloc(sizeof(*deck));
 	deck->cards = NULL;
 	deck->n_cards = 0;
-	card_t newCard;
 
-	for(int i = 0; i < MAX_CARDS_IN_DECK; i++)
-	{
-		newCard = Card_CreateCardFromNum(i);
-		for (int k = 0; k < excluded->n_cards; k++){
-			if(!(newCard.suit == excluded->cards[k]->suit && newCard.value == excluded->cards[k]->value)){
-        		Deck_AddCardTo(deck, newCard);
-			}	
-		}
+	for(int i = 0; i < MAX_CARDS_IN_DECK; i++){
+		Deck_AddCardTo(deck, Card_CreateCardFromNum(i));
 	}
-	deck->n_cards = MAX_CARDS_IN_DECK;
+
 	return deck;
 }
 
@@ -65,4 +42,21 @@ void Deck_Shuffle(deck_t * deck)
 			deck->cards[randNum] = temp;
 		}
 	}
+}
+
+void Deck_PrintAllHands(deck_t* hands, uint8_t size)
+{
+	for (int i = 0; i < size; i++) {
+		Deck_PrintHand(&hands[i]);
+	}
+}
+
+void Deck_PrintHand(deck_t* hand)
+{
+	for (int i = 0; i < hand->n_cards; i++)
+	{
+		Card_PrintCard(hand->cards[i]);
+	}
+	printf("\n");
+
 }
