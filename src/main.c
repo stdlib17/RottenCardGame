@@ -8,12 +8,9 @@
 
 int main(void) {
 	srand(time(NULL));
-	
-	deck_t excludedCards;
-	excludedCards.cards = NULL;
-	excludedCards.n_cards = 0;
 
-	deck_t * deck = Deck_CreateDeckExclude(&excludedCards);
+	deck_t * deck = Deck_CreateGameDeck(4);
+
 	CardPrinting_PrintHand(deck);
 	Deck_Shuffle(deck);
 	printf("\n\n");

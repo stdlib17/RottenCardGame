@@ -1,8 +1,5 @@
-**/build
+/.settings
 **/Debug
-**/.settings
 **/.vscode
-/.metadata/
-CMakeLists.txt
 .cproject
 .project

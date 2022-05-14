@@ -1,4 +1,5 @@
 #include "deck.h"
+#include <assert.h>
 
 /************************************
  * PUBLIC FUNCTION DEFINITIONS
@@ -8,8 +9,14 @@ deck_t * Deck_CreateGameDeck(uint8_t players)
 {
 	//TODO: Create a size variable deck depending on how many players are playing. 
 	//See for example this rules: https://cardgames.io/ohhell/#rule
-	assert(2 < players && players < 8)	
-	return Deck_CreateDeckExclude();
+
+	assert(2 < players && players < 8);
+
+	deck_t * excludedCards = malloc(sizeof(*excludedCards));
+	excludedCards->cards = NULL;
+	excludedCards->n_cards = 0;
+
+	return Deck_CreateDeckExclude(excludedCards);
 }
 
 /**
@@ -58,7 +65,4 @@ void Deck_Shuffle(deck_t * deck)
 			deck->cards[randNum] = temp;
 		}
 	}
-	
-
-	
 }
